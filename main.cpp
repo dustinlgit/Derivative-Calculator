@@ -1,16 +1,16 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-class MatrixClass{
+class Matrix{
 public:
-    void matrix(int& rows, int& columns){
+    template <int rows, int columns>
+    void input(int (&matrixArray)[rows][columns]){
         
     }
 
     /*int rref(){}
-
     int wronskian(){}
-
     int cramers(){}*/
 };
 
@@ -18,8 +18,15 @@ public:
         int rows, columns;
         cout << "How many rows and colums?: ";
         cin >> rows >> columns;
-        MatrixClass matrix1;
-        matrix1.matrix(rows, columns);
+
+        int matrixArray[rows][columns];
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
+                cout << "["<<i<<"]["<<j<<"]: ";
+                cin >> matrixArray[i][j];
+            }
+        }
+        
 
     }
 
